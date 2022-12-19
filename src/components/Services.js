@@ -1,3 +1,26 @@
+const cards = [
+  {
+    title: "Web Design",
+    description:
+      "Every single project is a challenge that we accept eagerly. Let's implement innovative ideas together!",
+  },
+  {
+    title: "Product Design",
+    description:
+      "Every single project is a challenge that we accept eagerly. Let's implement innovative ideas together!",
+  },
+  {
+    title: "UI/UX Design",
+    description:
+      "Every single project is a challenge that we accept eagerly. Let's implement innovative ideas together!",
+  },
+  {
+    title: "Art Direction",
+    description:
+      "Every single project is a challenge that we accept eagerly. Let's implement innovative ideas together!",
+  },
+];
+
 function ServiceCard(props) {
   return (
     <a
@@ -22,26 +45,9 @@ function Services() {
         </h6>
       </div>
       <div className="max-w-5xl w-full mx-auto grid grid-cols-2 gap-10 mobile:grid-cols-1">
-        <ServiceCard
-          title="Web Design"
-          description="Every single project is a challenge that we accept eagerly. Let's
-            implement innovative ideas together!"
-        />
-        <ServiceCard
-          title="Product Design"
-          description="Every single project is a challenge that we accept eagerly. Let's
-          implement innovative ideas together!"
-        />
-        <ServiceCard
-          title="UI/UX Design"
-          description="Every single project is a challenge that we accept eagerly. Let's
-        implement innovative ideas together!"
-        />
-        <ServiceCard
-          title="Art Direction"
-          description="Every single project is a challenge that we accept eagerly. Let's
-      implement innovative ideas together!"
-        />
+        {cards.map(({ title, description }) => (
+          <ServiceCard title={title} description={description} />
+        ))}
       </div>
     </div>
   );
